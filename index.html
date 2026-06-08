@@ -110,6 +110,27 @@
     .reveal-d2 { transition-delay:.3s; }
     .reveal-d3 { transition-delay:.45s; }
 
+    /* ── Section header staggered animation ── */
+    .sec-hdr.reveal { opacity:1; transform:none; }
+    .sec-hdr .eyebrow {
+      opacity:0; transform:translateY(12px);
+      transition:opacity .5s ease, transform .5s ease;
+    }
+    .sec-hdr .gold-line::before,
+    .sec-hdr .gold-line::after {
+      transform:scaleX(0);
+      transition:transform .7s cubic-bezier(.22,1,.36,1) .1s;
+      transform-origin:center;
+    }
+    .sec-hdr h2 {
+      opacity:0; transform:translateY(22px);
+      transition:opacity .75s cubic-bezier(.22,1,.36,1) .2s, transform .75s cubic-bezier(.22,1,.36,1) .2s;
+    }
+    .sec-hdr.in .eyebrow { opacity:1; transform:translateY(0); }
+    .sec-hdr.in .gold-line::before,
+    .sec-hdr.in .gold-line::after { transform:scaleX(1); }
+    .sec-hdr.in h2 { opacity:1; transform:translateY(0); }
+
     /* ── Watch card scroll animation ── */
     .watch-card.reveal {
       opacity:0;
